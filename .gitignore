@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Runtime & generated artifacts
+models/
+image_logs/
+logs/
+ppo_osu_tensorboard/
+training_report.md
+
+# Local experiment archives (not part of the repo)
+archive/
+backup_datasets_models/
+
+# tosu runtime (download separately — 100MB binary)
+tosu.exe
+*.exe
+static/
+
+# Replays & recorded datasets
+*.osr
+*.npz
+
+# Personal launcher config (devserver etc.)
+scripts/session.env
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store

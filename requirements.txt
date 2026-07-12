@@ -1,0 +1,9 @@
+# osu-VisionRL training stack (train_deeposu.py / osu_env.py / ppo.py / agent.py)
+torch
+gymnasium==0.29.1
+numpy
+opencv-python
+websocket-client
+evdev            # uinput virtual input backend + kill-switch listener
+python-xlib      # XTest input injection into XWayland (default backend)
+tensorboard
