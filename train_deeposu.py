@@ -69,8 +69,8 @@ CHECKPOINT_DIR = "./models/Deeposu_v3/"
 MAP_POOL = [
     # "champion iris noffy easy",     # Champion Iris — timing ~26% after 60 eps ✓
     # "no title celsius easy",        # No title — timing ~22-25% after 50 eps ✓
-    "zen zen zense music box normal", # Zen Zen Zense [Normal] — timing next
-    # "ninja ryuu easy",              # PLight - NINJA [ryuu's Easy]
+    # "zen zen zense music box normal", # Zen Zen Zense — timing ~22-23% after 50 eps ✓
+    "ninja ryuu easy",                # PLight - NINJA [ryuu's Easy] — timing next (last of cycle)
 ]
 ROTATE_EVERY = 50
 # Stop after one full pass through the pool (len(MAP_POOL) * ROTATE_EVERY
