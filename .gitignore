@@ -17,6 +17,7 @@ backup_datasets_models/
 # tosu runtime (download separately — 100MB binary)
 tosu.exe
 *.exe
+*.bak
 static/
 
 # Replays & recorded datasets
