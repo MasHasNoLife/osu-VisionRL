@@ -72,7 +72,7 @@ MAP_POOL = [
     # "zen zen zense music box normal", # Zen Zen Zense — timing ~22-23% after 50 eps ✓
     "ninja ryuu easy",                # PLight - NINJA [ryuu's Easy] — timing next (last of cycle)
 ]
-ROTATE_EVERY = 22
+ROTATE_EVERY = 50
 # Stop after one full pass through the pool (len(MAP_POOL) * ROTATE_EVERY
 # episodes), then save and exit. Set STOP_AFTER_ONE_CYCLE = False to loop the
 # pool forever (revisiting maps — the generalization curriculum).
