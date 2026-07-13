@@ -38,8 +38,12 @@ def map_label(map_file: str) -> str:
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 NUM_GAMES = 100_000
-GAMMA = 0.99
-GAE_LAMBDA = 0.95
+# Discount/GAE horizons preserved in REAL TIME after the 60->120Hz step-rate
+# change: doubling the rate without this would halve the effective lookahead
+# (gamma^120 vs gamma^60). 0.99^0.5≈0.995, 0.95^0.5≈0.975 keep the ~1s planning
+# window intact. Critic re-adapts to the new discount over a few episodes.
+GAMMA = 0.995
+GAE_LAMBDA = 0.975
 LR = 2.5e-4         # Atari-PPO default; KL early stop guards against blowups
 PPO_CLIP = 0.1
 # Entropy/KL are summed over 3 factorized heads (~3x a single head's scale),

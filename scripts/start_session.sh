@@ -35,7 +35,10 @@ fi
 # 2. wf-recorder feeding the virtual camera
 if ! pgrep -f "wf-recorder.*video9" >/dev/null; then
     echo "[2/4] Starting wf-recorder..."
-    wf-recorder -c rawvideo -m v4l2 -x yuv420p -f /dev/video9 \
+    # -r 120: capture at 120fps so the 120Hz control loop gets fresh frames
+    # (monitor is 240Hz, so there's headroom). Without this the vision source
+    # tops out ~60fps and the loop reads duplicate frames.
+    wf-recorder -r 120 -c rawvideo -m v4l2 -x yuv420p -f /dev/video9 \
         >"$REPO_DIR/logs/wf-recorder.log" 2>&1 &
     disown
 else

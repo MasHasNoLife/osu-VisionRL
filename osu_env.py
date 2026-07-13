@@ -51,7 +51,7 @@ class OsuEnv(gym.Env):
 
     # Step pacing: cap the control loop at 60 Hz so gamma horizon and click
     # granularity stay consistent even if the capture source runs faster.
-    STEP_DT = 1.0 / 60.0
+    STEP_DT = 1.0 / 120.0   # 120Hz control — ~8.3ms click granularity (was 60Hz/16.7ms)
 
     # Aim shaping: small per-step bonus for cursor proximity to the target.
     # Deliberately NOT potential-based: potential shaping is advantage-
