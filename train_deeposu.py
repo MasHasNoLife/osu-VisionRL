@@ -70,11 +70,13 @@ CHECKPOINT_DIR = "./models/Deeposu_v3/"
 # PHASE 1b (current): RX OFF in osu! (keep NF) — real click-timing training.
 # RX revisit cycle completed 2026-07-10 at ~50-60% aim on all four maps;
 # checkpoint backed up to "model backup/5 (rx cycle complete)".
+# 120Hz timing pass — bringing the other three maps up to the new control rate
+# (NINJA already has its 120Hz block at ~27-30%).
 MAP_POOL = [
-    # "champion iris noffy easy",     # Champion Iris — timing ~26% after 60 eps ✓
-    # "no title celsius easy",        # No title — timing ~22-25% after 50 eps ✓
-    # "zen zen zense music box normal", # Zen Zen Zense — timing ~22-23% after 50 eps ✓
-    "ninja ryuu easy",                # PLight - NINJA [ryuu's Easy] — timing next (last of cycle)
+    "champion iris noffy easy",       # Champion Iris — 120Hz next (was ~26% @ 60Hz)
+    # "no title celsius easy",        # No title — 120Hz queued (was ~22-25% @ 60Hz)
+    # "zen zen zense music box normal", # Zen Zen Zense — 120Hz queued (was ~22-23% @ 60Hz)
+    # "ninja ryuu easy",              # NINJA — 120Hz done (~27-30%)
 ]
 ROTATE_EVERY = 50
 # Stop after one full pass through the pool (len(MAP_POOL) * ROTATE_EVERY
